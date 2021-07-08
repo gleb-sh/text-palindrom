@@ -34,8 +34,6 @@ class Router
 
             $array = array_filter( explode('/',$URI));
 
-            var_dump($array);
-
             $this->includeController($this->routsList[$_SERVER['REQUEST_METHOD']][$array[1]]);
 
         }
