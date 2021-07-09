@@ -18,7 +18,7 @@
             <h1 class="homeblock_title">Приложение</h1>
             <div class="homeblock_subtitle">Веб-приложение, которое находит палиндромы</div>
             <form class="homeblock-form" data-method="palindrom">
-                <input type="text" placeholder="палиндром">
+                <input type="text" name="string" placeholder="палиндром">
                 <button type="submit">Найти</button>
             </form>
             <div class="result hidden">

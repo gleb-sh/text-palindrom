@@ -27,9 +27,8 @@ document.querySelectorAll('.homeblock-form').forEach((form)=>{
 
         data = {}
 
-        if (input.value.lenght > 0) {
-            data[input.name] = input.value
-        }
+        if (input.value.lenght < 1) return false;
+        data[input.name] = input.value
 
         $Request = new DataRequest();
         $Request.getdata(form.dataset.method,data,(ans)=>{
@@ -37,7 +36,7 @@ document.querySelectorAll('.homeblock-form').forEach((form)=>{
             title.innerHTML = ans.data.title;
             title.classList.remove('hidden')
             list = document.querySelector('.result-body_list');
-            // генерация вовзращенных вариантов
+            // генерация возвращенных вариантов
         })
 
 
