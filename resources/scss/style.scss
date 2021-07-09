@@ -45,11 +45,11 @@ $blue: #1082D2;
     min-height: calc(100vh - 60px);
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
     align-items: center;
 }
 
 .homeblock {
+    margin-top: calc( (100vh - 190px - 60px ) / 2);
     &_title {
         padding: 0;
         margin: 0;

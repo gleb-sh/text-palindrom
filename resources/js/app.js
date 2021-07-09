@@ -10,10 +10,9 @@ class DataRequest
         getdata.send( JSON.stringify(data) )
         getdata.onreadystatechange = function() {
             if (getdata.readyState != 4) return;        
-            ans = JSON.parse(getdata.responseText)
-            console.log(ans)
-            this.ans = ans;
-            succses(ans);
+            this.ans = JSON.parse(getdata.responseText)
+            console.log(this.ans)
+            success(this.ans);
         }
     }
 }
@@ -33,10 +32,23 @@ document.querySelectorAll('.homeblock-form').forEach((form)=>{
         $Request = new DataRequest();
         $Request.getdata(form.dataset.method,data,(ans)=>{
             title = document.querySelector('.result-title');
-            title.innerHTML = ans.data.title;
-            title.classList.remove('hidden')
+            title.classList.remove('hidden');
+            // удаление ранее созданных позиций
             list = document.querySelector('.result-body_list');
-            // генерация возвращенных вариантов
+            list.querySelectorAll('li').forEach(item=>{
+                item.remove()
+            })
+            if (ans.status === 1) {
+                title.innerHTML = 'Найден <strong>' + ans.data.count + '</strong> панидром (-ов)';
+                // генерация возвращенных вариантов
+                ans.data.list.forEach(item=>{
+                    let $elem = document.createElement('li');
+                    $elem.innerHTML = item;
+                    list.append($elem);
+                }) 
+            } else {
+                title.innerHTML = ans.data.error;
+            }
         })
 
 

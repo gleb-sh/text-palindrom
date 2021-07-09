@@ -21,8 +21,8 @@
                 <input type="text" name="string" placeholder="палиндром">
                 <button type="submit">Найти</button>
             </form>
-            <div class="result hidden">
-                <div class="result-title"></div>
+            <div class="result">
+                <div class="result-title hidden"></div>
                 <div class="result-body">
                     <ol class="result-body_list"></ol>
                 </div>
