@@ -31,7 +31,7 @@ function styles() {
     }))
     .pipe(cleanсss( ({
         level: { 1: {specialComments: 0 } },
-        //format: 'beautify'
+        format: 'beautify'
     }) ))
     .pipe(dest('public/css/'))
 }

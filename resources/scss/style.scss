@@ -55,8 +55,11 @@ $blue: #1082D2;
         margin: 0;
         letter-spacing: -0.6px;
         text-align: left;
+        font-size: 30px;
     }
     &_subtitle {
+        line-height: 18px;
+        font-size: 14px;
         text-align: left;
         margin-top: 5px;
         letter-spacing: -0.28px;
@@ -64,10 +67,10 @@ $blue: #1082D2;
 }
 
 .homeblock-form {
-    margin-top: 7px;
+    margin-top: 20px;
     input, button {
         box-sizing: content-box;
-        width: 100%;
+        width: calc(100% - 30px);
         height: 30px;
         padding: 5px 15px;
     }
@@ -101,11 +104,35 @@ $blue: #1082D2;
     display: flex;
     flex-flow: column nowrap;
     &-title {
-        padding-bottom: 3px;
+        line-height: 18px;
+        font-size: 14px;
+        padding-bottom: 5px;
         border-bottom: 1px solid #00000021;
     }
 }
 
+.result-body_list {
+    font-size: 14px;
+    line-height: 18px;
+    padding-left: 18px;
+}
+
 .hidden {
     opacity: 0 !important;
+}
+
+@media (max-width: 600px)
+{
+    .wraaper {
+        width: 100%;
+    }
+    .homeblock {
+        width: 286px !important;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20vh !important;
+        &_subtitle {
+            width: 200px !important;
+        }
+    }
 }
